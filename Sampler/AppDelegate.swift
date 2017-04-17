@@ -17,10 +17,6 @@ class AppDelegate: NSObject, NSApplicationDelegate
     {
         print("Sampler")
         print("------------------")
-        
-        let midi = MIDI()
-        midi.printSources()
-        midi.connectSrc(4)
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {

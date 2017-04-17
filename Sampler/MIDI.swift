@@ -7,25 +7,9 @@ import CoreMIDI
 
 class MIDI
 {
-    var midiClient: MIDIClientRef
-    var inPort:MIDIPortRef
-    var src:MIDIEndpointRef
-    
-    /*
-     * Initialise MIDI client
-     */
-    init()
-    {
-        print("Setting up MIDI")
-        
-        midiClient = 0
-        inPort = 0
-        src = MIDIGetSource(0)
-        MIDIClientCreate("MIDIClient", nil, nil, &midiClient)
-        
-        
-        print("------------------")
-    }
+    var midiClient: MIDIClientRef = 0
+    var inPort:MIDIPortRef = 0
+    var src:MIDIEndpointRef = MIDIGetSource(0)
     
     /*
      * Connect to MIDI source port
@@ -38,6 +22,7 @@ class MIDI
         inPort = UInt32(n)
         src = MIDIGetSource(n)
         
+        MIDIClientCreate("MIDIClient", nil, nil, &midiClient)
         MIDIInputPortCreate(midiClient, "MIDIInPort", MIDIReadCallback, nil, &inPort)
         MIDIPortConnectSource(inPort, src, &src)
     }
@@ -79,22 +64,6 @@ class MIDI
     }
     
     /*
-     * Prints available MIDI destinations to console.
-     */
-    func printDestinations()
-    {
-        let destNames = getDestinationNames()
-        
-        print("Number of MIDI Destinations: \(destNames.count)")
-        for destName in destNames
-        {
-            print("  Destination: \(destName)")
-        }
-        
-        print("------------------")
-    }
-    
-    /*
      * Returns available MIDI source names.
      */
     func getSourceNames() -> [String]
@@ -110,22 +79,6 @@ class MIDI
             }
         }
         return names;
-    }
-    
-    /*
-     * Prints available MIDI sources to console.
-     */
-    func printSources()
-    {
-        let sourceNames = getSourceNames()
-        
-        print("Number of MIDI Sources: \(sourceNames.count)")
-        for sourceName in sourceNames
-        {
-            print("  Source: \(sourceName)")
-        }
-        
-        print("------------------")
     }
     
 }
@@ -148,6 +101,10 @@ func MIDIReadCallback(pktList: UnsafePointer<MIDIPacketList>,
         
         if ((cmd & 240) == 144)  {
             print(note, velocity)
+        }
+        
+        if (packet.length > 3) {
+            print("Error: Not yet implemented")
         }
         
         packet = MIDIPacketNext(&packet).memory
