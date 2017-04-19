@@ -2,8 +2,6 @@
 //  Sampler.swift
 //  Sampler
 //
-//  Created by Joe Todd on 17/04/2017.
-//  Copyright © 2017 Joe Todd. All rights reserved.
 //
 import AVFoundation
 
@@ -11,17 +9,26 @@ struct Sample {
     var note: UInt8
     var url: NSURL
     var path: String
+    var velocity: Int
     var sound: AVAudioPlayer
 }
 
 class Sampler
 {
+    var numSamples = 15
     var samples = [Sample]()
     
     init() {
-        for _ in 0..<5 {
-            samples.append(Sample(note: 0, url: NSURL(), path: "", sound: AVAudioPlayer()));
+        for _ in 0..<numSamples {
+            samples.append(Sample(
+                note: 0,
+                url: NSURL(),
+                path: "",
+                velocity: 1,
+                sound: AVAudioPlayer()
+            ));
         }
+        loadPreset()
     }
     
     func loadSound(s: Int, path: String)
@@ -40,8 +47,71 @@ class Sampler
     }
     
     func playSound(s: Int)
-    {        
-        samples[s].sound.prepareToPlay()
-        samples[s].sound.play()
+    {
+        if samples[s].path != "" {
+            if (samples[s].sound.playing) {
+                samples[s].sound.stop();
+            }
+            samples[s].sound.currentTime = 0;
+            samples[s].sound.prepareToPlay()
+            samples[s].sound.play()
+        }
+    }
+    
+    func setSound(s: Int, url: NSURL)
+    {
+        loadSound(s, path: url.path!)
+    }
+    
+    func savePreset()
+    {
+        let p = 1
+        var data: [[String: AnyObject]] = []
+        let presets = NSUserDefaults()
+        
+        for s in 0..<numSamples {
+            data.append([
+                "note": String(samples[s].note),
+                "path": String(samples[s].path),
+                "velocity": String(samples[s].velocity)
+            ])
+        }
+        presets.setObject(data, forKey: String(p))
+        presets.synchronize()
+    }
+    
+    func loadPreset()
+    {
+        let p = 1
+        let presets = NSUserDefaults()
+        let data = presets.arrayForKey(String(p)) as? [[String: AnyObject]]
+        
+        for (s, smpl) in data!.enumerate() {
+            let sample = Sample(
+                note: smpl["note"] as! UInt8,
+                url: NSURL(),
+                path: smpl["path"] as! String,
+                velocity: smpl["velocity"] as! Int,
+                sound: AVAudioPlayer()
+            )
+            samples[s] = sample
+            loadSound(s, path: samples[s].path)
+        }
+    }
+    
+    func clearPreset() {
+        let p = 1
+        var data = [[ : ]]
+        let presets = NSUserDefaults.standardUserDefaults()
+        
+        for _ in 0..<numSamples {
+            data.append([
+                "note": String(0),
+                "path": "",
+                "velocity": String(1)
+            ])
+        }
+        presets.setObject(data, forKey: String(p))
+        presets.synchronize()
     }
 }

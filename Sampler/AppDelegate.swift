@@ -9,6 +9,9 @@
 import Cocoa
 import CoreMIDI
 
+var midi = MIDI()
+var sampler = Sampler()
+
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate
 {
@@ -20,6 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
+        print("Bye!")
     }
 
 }
