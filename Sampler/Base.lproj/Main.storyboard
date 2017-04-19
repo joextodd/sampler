@@ -671,7 +671,7 @@
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Sampler" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="m2S-Jp-Qdl">
+                    <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="960" height="480"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
@@ -699,7 +699,7 @@
                                     <string key="keyEquivalent">t</string>
                                 </buttonCell>
                             </button>
-                            <button fixedFrame="YES" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="bpG-rJ-8tN" userLabel="4" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
+                            <button fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="bpG-rJ-8tN" userLabel="4" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
                                 <rect key="frame" x="425" y="308" width="75" height="75"/>
                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="9VO-Ec-3Yc">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -721,14 +721,6 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                     <string key="keyEquivalent">d</string>
-                                </buttonCell>
-                            </button>
-                            <button toolTip="Right Click to Edit" wantsLayer="YES" fixedFrame="YES" tag="7" translatesAutoresizingMaskIntoConstraints="NO" id="KxK-KU-HnV" userLabel="7" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
-                                <rect key="frame" x="175" y="183" width="75" height="75"/>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="rLV-TX-UZW">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                    <string key="keyEquivalent">f</string>
                                 </buttonCell>
                             </button>
                             <button toolTip="Right Click to Edit" wantsLayer="YES" fixedFrame="YES" tag="8" translatesAutoresizingMaskIntoConstraints="NO" id="5dU-Rj-YdU" userLabel="8" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
@@ -807,13 +799,13 @@
                                             <menuItem title="Item 3" id="wi2-TG-gIZ"/>
                                         </items>
                                     </menu>
-                                    <connections>
-                                        <action selector="sourceSelected:" target="XfG-lQ-9wD" id="FA9-eR-6Ge"/>
-                                    </connections>
                                 </popUpButtonCell>
+                                <connections>
+                                    <action selector="sourceSelected:" target="XfG-lQ-9wD" id="cGJ-Tq-RdU"/>
+                                </connections>
                             </popUpButton>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hPQ-2Y-vIG" userLabel="Midi No Label">
-                                <rect key="frame" x="694" y="126" width="44" height="17"/>
+                                <rect key="frame" x="834" y="149" width="44" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="MIDI #" id="fZN-IS-4eK">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
@@ -821,11 +813,14 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0lW-yq-rf0" userLabel="Sound File">
-                                <rect key="frame" x="753" y="77" width="71" height="32"/>
+                                <rect key="frame" x="753" y="77" width="139" height="32"/>
                                 <buttonCell key="cell" type="push" title="File" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fwV-XO-9KU">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="selectFile:" target="XfG-lQ-9wD" id="3IQ-6S-Qem"/>
+                                </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jd0-nP-e1D" userLabel="Preset Label">
                                 <rect key="frame" x="776" y="367" width="55" height="17"/>
@@ -841,6 +836,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="backPreset:" target="XfG-lQ-9wD" id="OQQ-X3-UfP"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ydL-mi-FXT">
                                 <rect key="frame" x="839" y="337" width="63" height="32"/>
@@ -848,6 +846,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="nextPreset:" target="XfG-lQ-9wD" id="eeH-cA-Ssr"/>
+                                </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6rd-mQ-qNN" userLabel="Sound File Label">
                                 <rect key="frame" x="694" y="86" width="55" height="17"/>
@@ -863,9 +864,12 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="clearPreset:" target="XfG-lQ-9wD" id="gnB-Im-JXn"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XPt-hg-YXF" userLabel="Midi Number">
-                                <rect key="frame" x="759" y="124" width="59" height="17"/>
+                                <rect key="frame" x="827" y="124" width="59" height="17"/>
                                 <buttonCell key="cell" type="inline" title="60" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="m43-mY-fbJ">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="smallSystemBold"/>
@@ -873,14 +877,17 @@
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EjQ-wu-lWT" userLabel="Preset Number">
                                 <rect key="frame" x="774" y="345" width="49" height="17"/>
-                                <buttonCell key="cell" type="inline" title="1" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="9Ww-gO-chi">
+                                <buttonCell key="cell" type="inline" title="0" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="9Ww-gO-chi">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="smallSystemBold"/>
                                 </buttonCell>
                             </button>
                             <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fU1-Ak-ihb" userLabel="Velocity">
-                                <rect key="frame" x="757" y="45" width="141" height="21"/>
+                                <rect key="frame" x="757" y="45" width="131" height="21"/>
                                 <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="kh0-zy-t8P"/>
+                                <connections>
+                                    <action selector="changeVelocity:" target="XfG-lQ-9wD" id="dAo-Tk-yub"/>
+                                </connections>
                             </slider>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1XD-Fo-0rn" userLabel="Velocity Label">
                                 <rect key="frame" x="693" y="47" width="53" height="17"/>
@@ -903,12 +910,61 @@
                                         </items>
                                     </menu>
                                 </popUpButtonCell>
+                                <connections>
+                                    <action selector="destSelected:" target="XfG-lQ-9wD" id="6zd-MV-eyh"/>
+                                </connections>
                             </popUpButton>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lbr-5q-udk">
+                                <rect key="frame" x="759" y="124" width="58" height="17"/>
+                                <buttonCell key="cell" type="inline" title="1" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="iPo-ib-Mj4">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="smallSystemBold"/>
+                                </buttonCell>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H9o-Zb-MCS">
+                                <rect key="frame" x="757" y="149" width="60" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Trigger #" id="tyb-Ca-im9">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button toolTip="Right Click to Edit" wantsLayer="YES" fixedFrame="YES" tag="7" translatesAutoresizingMaskIntoConstraints="NO" id="KxK-KU-HnV" userLabel="7" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
+                                <rect key="frame" x="175" y="183" width="75" height="75"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="rLV-TX-UZW">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent">f</string>
+                                </buttonCell>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="midiDest" destination="XLD-ur-qHI" id="XrL-oQ-5Jh"/>
                         <outlet property="midiSrc" destination="jRW-fw-gsJ" id="Lkg-2t-8h1"/>
+                        <outlet property="preset" destination="EjQ-wu-lWT" id="19y-uN-LaY"/>
+                        <outlet property="presetBack" destination="XmT-Yt-R21" id="PAq-6D-ZJF"/>
+                        <outlet property="presetClear" destination="6iW-AC-6rp" id="63a-7f-DIu"/>
+                        <outlet property="presetNext" destination="ydL-mi-FXT" id="QRW-8v-aGW"/>
+                        <outlet property="t1" destination="OjN-x8-bfP" id="qfn-Mf-vud"/>
+                        <outlet property="t10" destination="noS-2Y-yty" id="ENZ-4M-Yut"/>
+                        <outlet property="t11" destination="ua7-Lw-6aL" id="Ib5-ck-bJz"/>
+                        <outlet property="t12" destination="fEv-yr-tv4" id="NrL-ET-TMC"/>
+                        <outlet property="t13" destination="Zan-hP-kI2" id="c86-lt-LIL"/>
+                        <outlet property="t14" destination="A0y-Ad-HNN" id="aLf-qM-FqJ"/>
+                        <outlet property="t15" destination="1Tf-Hr-rtc" id="13T-O2-mbS"/>
+                        <outlet property="t2" destination="rfI-IG-bWe" id="0gN-p6-zem"/>
+                        <outlet property="t3" destination="zug-yu-36G" id="LgJ-ES-5qT"/>
+                        <outlet property="t4" destination="bpG-rJ-8tN" id="Dfx-8w-bBG"/>
+                        <outlet property="t5" destination="HYj-L8-XaY" id="hv3-H8-Bns"/>
+                        <outlet property="t6" destination="mNP-Mi-aMx" id="Q1g-bR-R8I"/>
+                        <outlet property="t7" destination="KxK-KU-HnV" id="2gE-Jr-8MB"/>
+                        <outlet property="t8" destination="5dU-Rj-YdU" id="nS7-bx-kSj"/>
+                        <outlet property="t9" destination="0Hq-ov-2hB" id="46r-4N-yQs"/>
+                        <outlet property="triggerFile" destination="0lW-yq-rf0" id="O8u-we-ulw"/>
+                        <outlet property="triggerMidi" destination="XPt-hg-YXF" id="ahl-kp-eaq"/>
+                        <outlet property="triggerNo" destination="lbr-5q-udk" id="rar-jJ-4TV"/>
+                        <outlet property="triggerVelocity" destination="fU1-Ak-ihb" id="hYD-Cc-pje"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

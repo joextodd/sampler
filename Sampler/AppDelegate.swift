@@ -12,6 +12,7 @@ import CoreMIDI
 var midi = MIDI()
 var sampler = Sampler()
 
+
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate
 {
@@ -20,6 +21,8 @@ class AppDelegate: NSObject, NSApplicationDelegate
     {
         print("Sampler")
         print("------------------")
+        
+        sampler.loadPreset(0)
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {

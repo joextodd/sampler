@@ -17,6 +17,7 @@
 		771CA2711EA4E99E00BB7EAA /* MIDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771CA2701EA4E99E00BB7EAA /* MIDI.swift */; };
 		776FDCC21EA50E1D0054E57F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 776FDCC11EA50E1D0054E57F /* AVFoundation.framework */; };
 		776FDCC41EA526260054E57F /* Sampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FDCC31EA526260054E57F /* Sampler.swift */; };
+		77D1053F1EA80A3F0034C521 /* Trigger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D1053E1EA80A3F0034C521 /* Trigger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		771CA2701EA4E99E00BB7EAA /* MIDI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MIDI.swift; sourceTree = "<group>"; };
 		776FDCC11EA50E1D0054E57F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		776FDCC31EA526260054E57F /* Sampler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sampler.swift; sourceTree = "<group>"; };
+		77D1053E1EA80A3F0034C521 /* Trigger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trigger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				771CA24C1EA4E29B00BB7EAA /* Info.plist */,
 				771CA2701EA4E99E00BB7EAA /* MIDI.swift */,
 				776FDCC31EA526260054E57F /* Sampler.swift */,
+				77D1053E1EA80A3F0034C521 /* Trigger.swift */,
 			);
 			path = Sampler;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				771CA2461EA4E29B00BB7EAA /* ViewController.swift in Sources */,
 				771CA2441EA4E29B00BB7EAA /* AppDelegate.swift in Sources */,
 				776FDCC41EA526260054E57F /* Sampler.swift in Sources */,
+				77D1053F1EA80A3F0034C521 /* Trigger.swift in Sources */,
 				771CA2711EA4E99E00BB7EAA /* MIDI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

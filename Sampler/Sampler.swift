@@ -5,6 +5,8 @@
 //
 import AVFoundation
 
+// TODO: Fix multiple sounds on one trigger
+
 struct Sample {
     var note: UInt8
     var url: NSURL
@@ -28,7 +30,6 @@ class Sampler
                 sound: AVAudioPlayer()
             ));
         }
-        loadPreset()
     }
     
     func loadSound(s: Int, path: String)
@@ -63,9 +64,8 @@ class Sampler
         loadSound(s, path: url.path!)
     }
     
-    func savePreset()
+    func savePreset(p: Int)
     {
-        let p = 1
         var data: [[String: AnyObject]] = []
         let presets = NSUserDefaults()
         
@@ -76,33 +76,36 @@ class Sampler
                 "velocity": String(samples[s].velocity)
             ])
         }
+        
         presets.setObject(data, forKey: String(p))
         presets.synchronize()
     }
     
-    func loadPreset()
+    func loadPreset(p: Int)
     {
-        let p = 1
         let presets = NSUserDefaults()
         let data = presets.arrayForKey(String(p)) as? [[String: AnyObject]]
         
-        for (s, smpl) in data!.enumerate() {
-            let sample = Sample(
-                note: smpl["note"] as! UInt8,
-                url: NSURL(),
-                path: smpl["path"] as! String,
-                velocity: smpl["velocity"] as! Int,
-                sound: AVAudioPlayer()
-            )
-            samples[s] = sample
-            loadSound(s, path: samples[s].path)
+        if data != nil {
+            for (s, smpl) in data!.enumerate() {
+                let sample = Sample(
+                    note: UInt8(smpl["note"] as! String)!,
+                    url: NSURL(),
+                    path: smpl["path"] as! String,
+                    velocity: Int(smpl["velocity"] as! String)!,
+                    sound: AVAudioPlayer()
+                )
+                samples[s] = sample
+                if samples[s].path != "" {
+                    loadSound(s, path: samples[s].path)
+                }
+            }
         }
     }
     
-    func clearPreset() {
-        let p = 1
-        var data = [[ : ]]
-        let presets = NSUserDefaults.standardUserDefaults()
+    func clearPreset(p: Int) {
+        var data: [[String: AnyObject]] = []
+        let presets = NSUserDefaults()
         
         for _ in 0..<numSamples {
             data.append([
