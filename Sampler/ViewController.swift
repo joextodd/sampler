@@ -14,58 +14,58 @@ class ViewController: NSViewController, TriggerDelegate {
         super.viewDidLoad()
         
         view.wantsLayer = true
-        view.layer?.backgroundColor = NSColor(red: 0, green: 0, blue: 0, alpha: 0.8).CGColor
+        view.layer?.backgroundColor = NSColor(red: 0, green: 0, blue: 0, alpha: 0.8).cgColor
         
         midiSrc.removeAllItems()
         midiDest.removeAllItems()
-        midiSrc.addItemsWithTitles(midi.getSourceNames())
-        midiDest.addItemsWithTitles(midi.getDestinationNames())
+        midiSrc.addItems(withTitles: midi.getSourceNames())
+        midiDest.addItems(withTitles: midi.getDestinationNames())
         
         if midiSrc.numberOfItems == 0 {
-            midiSrc.addItemWithTitle("No MIDI inputs available")
+            midiSrc.addItem(withTitle: "No MIDI inputs available")
         }
         if midiDest.numberOfItems == 0 {
-            midiDest.addItemWithTitle("No MIDI outputs available")
+            midiDest.addItem(withTitle: "No MIDI outputs available")
         }
         
         setTriggerDelegates()
     }
     
-    override var representedObject: AnyObject? {
+    override var representedObject: Any? {
         didSet {
             
         }
     }
     
-    @IBAction func sourceSelected(sender: NSPopUpButton)
+    @IBAction func sourceSelected(_ sender: NSPopUpButton)
     {
         midi.connectSrc(midiSrc.indexOfSelectedItem)
     }
     
-    @IBAction func destSelected(sender: NSPopUpButton)
+    @IBAction func destSelected(_ sender: NSPopUpButton)
     {
     }
     
-    @IBAction func backPreset(sender: NSButton)
+    @IBAction func backPreset(_ sender: NSButton)
     {
         selectedTrigger = selectedTrigger == 0 ? 255 : selectedTrigger - 1
         sampler.loadPreset(selectedTrigger)
         preset.title = String(selectedTrigger)
     }
     
-    @IBAction func nextPreset(sender: NSButton)
+    @IBAction func nextPreset(_ sender: NSButton)
     {
         selectedTrigger = (selectedTrigger + 1) % 256
         sampler.loadPreset(selectedTrigger)
         preset.title = String(selectedTrigger)
     }
     
-    @IBAction func clearPreset(sender: NSButton)
+    @IBAction func clearPreset(_ sender: NSButton)
     {
         sampler.clearPreset(selectedTrigger)
     }
     
-    @IBAction func selectFile(sender: NSButton)
+    @IBAction func selectFile(_ sender: NSButton)
     {
         let fileMenu = NSOpenPanel()
         fileMenu.allowsMultipleSelection = false
@@ -75,16 +75,16 @@ class ViewController: NSViewController, TriggerDelegate {
         
         let f = fileMenu.runModal()
         if (f == NSModalResponseOK) {
-            sampler.setSound(selectedTrigger, url: fileMenu.URL!)
+            sampler.setSound(selectedTrigger, path: fileMenu.url!.path)
             sampler.savePreset(Int(preset.title)!)
         }
     }
     
-    @IBAction func changeVelocity(sender: NSSlider)
+    @IBAction func changeVelocity(_ sender: NSSlider)
     {
     }
     
-    func triggerSelected(t: Int) {
+    func triggerSelected(_ t: Int) {
         selectedTrigger = t
         triggerNo.title = String(t)
     }

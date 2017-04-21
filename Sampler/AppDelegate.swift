@@ -17,7 +17,7 @@ var sampler = Sampler()
 class AppDelegate: NSObject, NSApplicationDelegate
 {
 
-    func applicationDidFinishLaunching(aNotification: NSNotification)
+    func applicationDidFinishLaunching(_ aNotification: Notification)
     {
         print("Sampler")
         print("------------------")
@@ -25,7 +25,7 @@ class AppDelegate: NSObject, NSApplicationDelegate
         sampler.loadPreset(0)
     }
 
-    func applicationWillTerminate(aNotification: NSNotification) {
+    func applicationWillTerminate(_ aNotification: Notification) {
         print("Bye!")
     }
 

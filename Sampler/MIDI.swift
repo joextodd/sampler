@@ -14,7 +14,7 @@ class MIDI
     /*
      * Connect to MIDI source port
      */
-    func connectSrc(n: Int) -> Void
+    func connectSrc(_ n: Int) -> Void
     {
         let endpoint:MIDIEndpointRef = MIDIGetSource(n);
         print("Setting source to: \(getDisplayName(endpoint))")
@@ -22,15 +22,15 @@ class MIDI
         inPort = UInt32(n)
         src = MIDIGetSource(n)
         
-        MIDIClientCreate("MIDIClient", nil, nil, &midiClient)
-        MIDIInputPortCreate(midiClient, "MIDIInPort", MIDIReadCallback, nil, &inPort)
+        MIDIClientCreate("MIDIClient" as CFString, nil, nil, &midiClient)
+        MIDIInputPortCreate(midiClient, "MIDIInPort" as CFString, MIDIReadCallback as! MIDIReadProc, nil, &inPort)
         MIDIPortConnectSource(inPort, src, &src)
     }
     
     /*
      * Get display name of MIDI reference
      */
-    func getDisplayName(obj: MIDIObjectRef) -> String
+    func getDisplayName(_ obj: MIDIObjectRef) -> String
     {
         var param: Unmanaged<CFString>?
         var name: String = "Error"
@@ -86,11 +86,11 @@ class MIDI
 /*
  * C style callback to handle MIDI input packets.
  */
-func MIDIReadCallback(pktList: UnsafePointer<MIDIPacketList>,
-                      readProcRefCon: UnsafeMutablePointer<Void>,
-                      srcConnRefCon: UnsafeMutablePointer<Void>) -> Void
+func MIDIReadCallback(_ pktList: UnsafePointer<MIDIPacketList>,
+                      readProcRefCon: UnsafeMutableRawPointer,
+                      srcConnRefCon: UnsafeMutableRawPointer) -> Void
 {
-    let packetList:MIDIPacketList = pktList.memory
+    let packetList:MIDIPacketList = pktList.pointee
     
     var packet:MIDIPacket = packetList.packet
     for _ in 1...packetList.numPackets
@@ -107,6 +107,6 @@ func MIDIReadCallback(pktList: UnsafePointer<MIDIPacketList>,
             print("Error: Not yet implemented")
         }
         
-        packet = MIDIPacketNext(&packet).memory
+        packet = MIDIPacketNext(&packet).pointee
     }
 }

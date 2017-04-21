@@ -9,7 +9,7 @@ import Cocoa
  * Delegate trigger actions to View Controller
  */
 protocol TriggerDelegate {
-    func triggerSelected(t: Int)
+    func triggerSelected(_ t: Int)
 }
 
 /*
@@ -23,26 +23,26 @@ class Trigger: NSButton {
                      target: Any?,
                      action: Selector?) {
         self.init(title: title, target: target, action: action)
-        self.layer?.backgroundColor = NSColor(red: 1, green: 1, blue: 1, alpha: 0.8).CGColor
+        self.layer?.backgroundColor = NSColor(red: 1, green: 1, blue: 1, alpha: 0.8).cgColor
     }
     
-    override func mouseDown(event: NSEvent) {
+    override func mouseDown(with event: NSEvent) {
         sampler.playSound(self.tag)
-        self.layer?.backgroundColor = NSColor(red: 1, green: 0.2, blue: 0.2, alpha: 0.8).CGColor
+        self.layer?.backgroundColor = NSColor(red: 1, green: 0.2, blue: 0.2, alpha: 0.8).cgColor
     }
     
-    override func mouseUp(event: NSEvent) {
-        self.layer?.backgroundColor = NSColor(red: 1, green: 1, blue: 1, alpha: 0.8).CGColor
+    override func mouseUp(with event: NSEvent) {
+        self.layer?.backgroundColor = NSColor(red: 1, green: 1, blue: 1, alpha: 0.8).cgColor
     }
     
-    override func performKeyEquivalent(key: NSEvent) -> Bool {
+    override func performKeyEquivalent(with key: NSEvent) -> Bool {
         // TODO: Only play sound if allowable character
         sampler.playSound(self.tag)
-        self.layer?.backgroundColor = NSColor(red: 1, green: 0.2, blue: 0.2, alpha: 0.8).CGColor
-        return super.performKeyEquivalent(key)
+        self.layer?.backgroundColor = NSColor(red: 1, green: 0.2, blue: 0.2, alpha: 0.8).cgColor
+        return super.performKeyEquivalent(with: key)
     }
     
-    override func rightMouseDown(event: NSEvent) {
+    override func rightMouseDown(with event: NSEvent) {
         delegate.triggerSelected(Int(self.tag))
     }
     

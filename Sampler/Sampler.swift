@@ -9,7 +9,6 @@ import AVFoundation
 
 struct Sample {
     var note: UInt8
-    var url: NSURL
     var path: String
     var velocity: Int
     var sound: AVAudioPlayer
@@ -24,7 +23,6 @@ class Sampler
         for _ in 0..<numSamples {
             samples.append(Sample(
                 note: 0,
-                url: NSURL(),
                 path: "",
                 velocity: 1,
                 sound: AVAudioPlayer()
@@ -32,13 +30,13 @@ class Sampler
         }
     }
     
-    func loadSound(s: Int, path: String)
+    func loadSound(_ s: Int, path: String)
     {
+        let url = URL(string: path)!
         samples[s].path = path
-        samples[s].url = NSURL(string: path)!
         
         do {
-            samples[s].sound = try AVAudioPlayer(contentsOfURL: samples[s].url)
+            samples[s].sound = try AVAudioPlayer(contentsOf: url)
             guard case samples[s].sound = samples[s].sound else { return }
             
             samples[s].sound.prepareToPlay()
@@ -47,10 +45,10 @@ class Sampler
         }
     }
     
-    func playSound(s: Int)
+    func playSound(_ s: Int)
     {
         if samples[s].path != "" {
-            if (samples[s].sound.playing) {
+            if (samples[s].sound.isPlaying) {
                 samples[s].sound.stop();
             }
             samples[s].sound.currentTime = 0;
@@ -59,38 +57,37 @@ class Sampler
         }
     }
     
-    func setSound(s: Int, url: NSURL)
+    func setSound(_ s: Int, path: String)
     {
-        loadSound(s, path: url.path!)
+        loadSound(s, path: path)
     }
     
-    func savePreset(p: Int)
+    func savePreset(_ p: Int)
     {
         var data: [[String: AnyObject]] = []
-        let presets = NSUserDefaults()
+        let presets = UserDefaults()
         
         for s in 0..<numSamples {
             data.append([
-                "note": String(samples[s].note),
-                "path": String(samples[s].path),
-                "velocity": String(samples[s].velocity)
+                "note": String(samples[s].note) as AnyObject,
+                "path": String(samples[s].path) as AnyObject,
+                "velocity": String(samples[s].velocity) as AnyObject
             ])
         }
         
-        presets.setObject(data, forKey: String(p))
+        presets.set(data, forKey: String(p))
         presets.synchronize()
     }
     
-    func loadPreset(p: Int)
+    func loadPreset(_ p: Int)
     {
-        let presets = NSUserDefaults()
-        let data = presets.arrayForKey(String(p)) as? [[String: AnyObject]]
+        let presets = UserDefaults()
+        let data = presets.array(forKey: String(p)) as? [[String: AnyObject]]
         
         if data != nil {
-            for (s, smpl) in data!.enumerate() {
+            for (s, smpl) in data!.enumerated() {
                 let sample = Sample(
                     note: UInt8(smpl["note"] as! String)!,
-                    url: NSURL(),
                     path: smpl["path"] as! String,
                     velocity: Int(smpl["velocity"] as! String)!,
                     sound: AVAudioPlayer()
@@ -103,18 +100,18 @@ class Sampler
         }
     }
     
-    func clearPreset(p: Int) {
+    func clearPreset(_ p: Int) {
         var data: [[String: AnyObject]] = []
-        let presets = NSUserDefaults()
+        let presets = UserDefaults()
         
         for _ in 0..<numSamples {
             data.append([
-                "note": String(0),
-                "path": "",
-                "velocity": String(1)
+                "note": String(0) as AnyObject,
+                "path": "" as AnyObject,
+                "velocity": String(1) as AnyObject
             ])
         }
-        presets.setObject(data, forKey: String(p))
+        presets.set(data, forKey: String(p))
         presets.synchronize()
     }
 }
