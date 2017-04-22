@@ -89,7 +89,6 @@ class ViewController: NSViewController, TriggerDelegate {
         triggerNo.title = String(t)
     }
 
-    
     @IBOutlet var t1: Trigger!
     @IBOutlet var t2: Trigger!
     @IBOutlet var t3: Trigger!

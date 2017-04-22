@@ -5,7 +5,6 @@
 //
 import AVFoundation
 
-// TODO: Fix multiple sounds on one trigger
 
 struct Sample {
     var note: UInt8

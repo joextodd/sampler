@@ -36,9 +36,10 @@ class Trigger: NSButton {
     }
     
     override func performKeyEquivalent(with key: NSEvent) -> Bool {
-        // TODO: Only play sound if allowable character
-        sampler.playSound(self.tag)
-        self.layer?.backgroundColor = NSColor(red: 1, green: 0.2, blue: 0.2, alpha: 0.8).cgColor
+        if key.characters! == self.keyEquivalent {
+            sampler.playSound(self.tag)
+            self.layer?.backgroundColor = NSColor(red: 1, green: 0.2, blue: 0.2, alpha: 0.8).cgColor
+        }
         return super.performKeyEquivalent(with: key)
     }
     
