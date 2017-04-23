@@ -4,6 +4,7 @@
 //
 import CoreMIDI
 
+// TODO: Add MIDI outputs
 
 class MIDI
 {

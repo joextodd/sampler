@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12120"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -677,118 +678,133 @@
                         <subviews>
                             <button toolTip="Right Click to Edit" wantsLayer="YES" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="OjN-x8-bfP" userLabel="1" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
                                 <rect key="frame" x="50" y="308" width="75" height="75"/>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="VIH-gb-K6b">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="TriggerOFF" imagePosition="only" alignment="center" alternateImage="TriggerON" imageScaling="proportionallyUpOrDown" inset="2" id="VIH-gb-K6b">
+                                    <behavior key="behavior" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                     <string key="keyEquivalent">e</string>
                                 </buttonCell>
                             </button>
                             <button identifier="1" fixedFrame="YES" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="rfI-IG-bWe" userLabel="2" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
                                 <rect key="frame" x="175" y="308" width="75" height="75"/>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="7aU-Q3-RaK">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="TriggerOFF" imagePosition="only" alignment="center" alternateImage="TriggerON" imageScaling="proportionallyUpOrDown" inset="2" id="7aU-Q3-RaK">
+                                    <behavior key="behavior" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                     <string key="keyEquivalent">r</string>
                                 </buttonCell>
                             </button>
                             <button fixedFrame="YES" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="zug-yu-36G" userLabel="3" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
                                 <rect key="frame" x="300" y="308" width="75" height="75"/>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="vUO-ay-yZO">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="TriggerOFF" imagePosition="only" alignment="center" alternateImage="TriggerON" imageScaling="proportionallyUpOrDown" inset="2" id="vUO-ay-yZO">
+                                    <behavior key="behavior" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                     <string key="keyEquivalent">t</string>
                                 </buttonCell>
                             </button>
                             <button fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="bpG-rJ-8tN" userLabel="4" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
                                 <rect key="frame" x="425" y="308" width="75" height="75"/>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="9VO-Ec-3Yc">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="TriggerOFF" imagePosition="only" alignment="center" alternateImage="TriggerON" imageScaling="proportionallyUpOrDown" inset="2" id="9VO-Ec-3Yc">
+                                    <behavior key="behavior" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                     <string key="keyEquivalent">y</string>
                                 </buttonCell>
                             </button>
                             <button fixedFrame="YES" tag="5" translatesAutoresizingMaskIntoConstraints="NO" id="HYj-L8-XaY" userLabel="5" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
                                 <rect key="frame" x="550" y="308" width="75" height="75"/>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="fC9-Tc-iiK">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="TriggerOFF" imagePosition="only" alignment="center" alternateImage="TriggerON" imageScaling="proportionallyUpOrDown" inset="2" id="fC9-Tc-iiK">
+                                    <behavior key="behavior" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                     <string key="keyEquivalent">u</string>
                                 </buttonCell>
                             </button>
                             <button toolTip="Right Click to Edit" wantsLayer="YES" fixedFrame="YES" tag="6" translatesAutoresizingMaskIntoConstraints="NO" id="mNP-Mi-aMx" userLabel="6" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
                                 <rect key="frame" x="50" y="183" width="75" height="75"/>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="eXf-KA-zBO">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="TriggerOFF" imagePosition="only" alignment="center" alternateImage="TriggerON" imageScaling="proportionallyUpOrDown" inset="2" id="eXf-KA-zBO">
+                                    <behavior key="behavior" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                     <string key="keyEquivalent">d</string>
                                 </buttonCell>
                             </button>
                             <button toolTip="Right Click to Edit" wantsLayer="YES" fixedFrame="YES" tag="8" translatesAutoresizingMaskIntoConstraints="NO" id="5dU-Rj-YdU" userLabel="8" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
                                 <rect key="frame" x="300" y="183" width="75" height="75"/>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="6fr-id-ANG">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="TriggerOFF" imagePosition="only" alignment="center" alternateImage="TriggerON" imageScaling="proportionallyUpOrDown" inset="2" id="6fr-id-ANG">
+                                    <behavior key="behavior" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                     <string key="keyEquivalent">g</string>
                                 </buttonCell>
                             </button>
                             <button toolTip="Right Click to Edit" wantsLayer="YES" fixedFrame="YES" tag="9" translatesAutoresizingMaskIntoConstraints="NO" id="0Hq-ov-2hB" userLabel="9" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
                                 <rect key="frame" x="425" y="183" width="75" height="75"/>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="qhf-SU-7D2">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="TriggerOFF" imagePosition="only" alignment="center" alternateImage="TriggerON" imageScaling="proportionallyUpOrDown" inset="2" id="qhf-SU-7D2">
+                                    <behavior key="behavior" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                     <string key="keyEquivalent">h</string>
                                 </buttonCell>
                             </button>
                             <button toolTip="Right Click to Edit" wantsLayer="YES" fixedFrame="YES" tag="10" translatesAutoresizingMaskIntoConstraints="NO" id="noS-2Y-yty" userLabel="10" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
                                 <rect key="frame" x="550" y="183" width="75" height="75"/>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="9O0-yC-b6n">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="TriggerOFF" imagePosition="only" alignment="center" alternateImage="TriggerON" imageScaling="proportionallyUpOrDown" inset="2" id="9O0-yC-b6n">
+                                    <behavior key="behavior" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                     <string key="keyEquivalent">j</string>
                                 </buttonCell>
                             </button>
                             <button toolTip="Right Click to Edit" wantsLayer="YES" fixedFrame="YES" tag="11" translatesAutoresizingMaskIntoConstraints="NO" id="ua7-Lw-6aL" userLabel="11" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
                                 <rect key="frame" x="50" y="58" width="75" height="75"/>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="PZe-n1-al4">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="TriggerOFF" imagePosition="only" alignment="center" alternateImage="TriggerON" imageScaling="proportionallyUpOrDown" inset="2" id="PZe-n1-al4">
+                                    <behavior key="behavior" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                     <string key="keyEquivalent">x</string>
                                 </buttonCell>
                             </button>
                             <button toolTip="Right Click to Edit" wantsLayer="YES" fixedFrame="YES" tag="12" translatesAutoresizingMaskIntoConstraints="NO" id="fEv-yr-tv4" userLabel="12" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
                                 <rect key="frame" x="175" y="58" width="75" height="75"/>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="SW3-9N-DfQ">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="TriggerOFF" imagePosition="only" alignment="center" alternateImage="TriggerON" imageScaling="proportionallyUpOrDown" inset="2" id="SW3-9N-DfQ">
+                                    <behavior key="behavior" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                     <string key="keyEquivalent">c</string>
                                 </buttonCell>
                             </button>
                             <button toolTip="Right Click to Edit" wantsLayer="YES" fixedFrame="YES" tag="13" translatesAutoresizingMaskIntoConstraints="NO" id="Zan-hP-kI2" userLabel="13" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
                                 <rect key="frame" x="300" y="58" width="75" height="75"/>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="m3b-1k-y9G">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="TriggerOFF" imagePosition="only" alignment="center" alternateImage="TriggerON" imageScaling="proportionallyUpOrDown" inset="2" id="m3b-1k-y9G">
+                                    <behavior key="behavior" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                     <string key="keyEquivalent">v</string>
                                 </buttonCell>
                             </button>
                             <button toolTip="Right Click to Edit" wantsLayer="YES" fixedFrame="YES" tag="14" translatesAutoresizingMaskIntoConstraints="NO" id="A0y-Ad-HNN" userLabel="14" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
                                 <rect key="frame" x="425" y="58" width="75" height="75"/>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="Uvh-dd-ptp">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="TriggerOFF" imagePosition="only" alignment="center" alternateImage="TriggerON" imageScaling="proportionallyUpOrDown" inset="2" id="Uvh-dd-ptp">
+                                    <behavior key="behavior" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                     <string key="keyEquivalent">b</string>
                                 </buttonCell>
                             </button>
                             <button toolTip="Right Click to Edit" wantsLayer="YES" fixedFrame="YES" tag="15" translatesAutoresizingMaskIntoConstraints="NO" id="1Tf-Hr-rtc" userLabel="15" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
                                 <rect key="frame" x="550" y="58" width="75" height="75"/>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="TmF-Yu-Ri3">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="TriggerOFF" imagePosition="only" alignment="center" alternateImage="TriggerON" imageScaling="proportionallyUpOrDown" inset="2" id="TmF-Yu-Ri3">
+                                    <behavior key="behavior" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                     <string key="keyEquivalent">n</string>
                                 </buttonCell>
                             </button>
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jRW-fw-gsJ">
                                 <rect key="frame" x="694" y="234" width="205" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <popUpButtonCell key="cell" type="push" title="MIDI Input Source" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="863-oc-6Rr" id="aBb-sL-qHo">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
@@ -804,8 +820,9 @@
                                     <action selector="sourceSelected:" target="XfG-lQ-9wD" id="cGJ-Tq-RdU"/>
                                 </connections>
                             </popUpButton>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hPQ-2Y-vIG" userLabel="Midi No Label">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPQ-2Y-vIG" userLabel="Midi No Label">
                                 <rect key="frame" x="834" y="149" width="44" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="MIDI #" id="fZN-IS-4eK">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
@@ -814,6 +831,7 @@
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0lW-yq-rf0" userLabel="Sound File">
                                 <rect key="frame" x="753" y="77" width="139" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="File" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fwV-XO-9KU">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -822,8 +840,9 @@
                                     <action selector="selectFile:" target="XfG-lQ-9wD" id="3IQ-6S-Qem"/>
                                 </connections>
                             </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jd0-nP-e1D" userLabel="Preset Label">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jd0-nP-e1D" userLabel="Preset Label">
                                 <rect key="frame" x="776" y="367" width="55" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Preset" id="Zj5-eF-iaZ">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
@@ -832,6 +851,7 @@
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XmT-Yt-R21">
                                 <rect key="frame" x="689" y="337" width="64" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Back" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="icJ-EI-nor">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -842,6 +862,7 @@
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ydL-mi-FXT">
                                 <rect key="frame" x="839" y="337" width="63" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Next" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5sO-0P-Pin">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -850,8 +871,9 @@
                                     <action selector="nextPreset:" target="XfG-lQ-9wD" id="eeH-cA-Ssr"/>
                                 </connections>
                             </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6rd-mQ-qNN" userLabel="Sound File Label">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rd-mQ-qNN" userLabel="Sound File Label">
                                 <rect key="frame" x="694" y="86" width="55" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Sample" id="sj1-IN-Z62">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
@@ -860,6 +882,7 @@
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6iW-AC-6rp">
                                 <rect key="frame" x="768" y="301" width="61" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Clear" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="j0P-rh-pFY">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -870,6 +893,7 @@
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XPt-hg-YXF" userLabel="Midi Number">
                                 <rect key="frame" x="827" y="124" width="59" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="inline" title="60" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="m43-mY-fbJ">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="smallSystemBold"/>
@@ -877,20 +901,23 @@
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EjQ-wu-lWT" userLabel="Preset Number">
                                 <rect key="frame" x="774" y="345" width="49" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="inline" title="0" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="9Ww-gO-chi">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="smallSystemBold"/>
                                 </buttonCell>
                             </button>
                             <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fU1-Ak-ihb" userLabel="Velocity">
-                                <rect key="frame" x="757" y="45" width="131" height="21"/>
+                                <rect key="frame" x="757" y="45" width="131" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="kh0-zy-t8P"/>
                                 <connections>
                                     <action selector="changeVelocity:" target="XfG-lQ-9wD" id="dAo-Tk-yub"/>
                                 </connections>
                             </slider>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1XD-Fo-0rn" userLabel="Velocity Label">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1XD-Fo-0rn" userLabel="Velocity Label">
                                 <rect key="frame" x="693" y="47" width="53" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Velocity" id="leK-5u-bq6">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
@@ -899,6 +926,7 @@
                             </textField>
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XLD-ur-qHI">
                                 <rect key="frame" x="694" y="193" width="205" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <popUpButtonCell key="cell" type="push" title="MIDI Output Destination" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="s7a-BW-a7x" id="Lyi-sD-zNa">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
@@ -916,13 +944,15 @@
                             </popUpButton>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lbr-5q-udk">
                                 <rect key="frame" x="759" y="124" width="58" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="inline" title="1" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="iPo-ib-Mj4">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="smallSystemBold"/>
                                 </buttonCell>
                             </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H9o-Zb-MCS">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H9o-Zb-MCS">
                                 <rect key="frame" x="757" y="149" width="60" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Trigger #" id="tyb-Ca-im9">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
@@ -931,8 +961,9 @@
                             </textField>
                             <button toolTip="Right Click to Edit" wantsLayer="YES" fixedFrame="YES" tag="7" translatesAutoresizingMaskIntoConstraints="NO" id="KxK-KU-HnV" userLabel="7" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
                                 <rect key="frame" x="175" y="183" width="75" height="75"/>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="rLV-TX-UZW">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="TriggerOFF" imagePosition="only" alignment="center" alternateImage="TriggerON" imageScaling="proportionallyUpOrDown" inset="2" id="rLV-TX-UZW">
+                                    <behavior key="behavior" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                     <string key="keyEquivalent">f</string>
                                 </buttonCell>
@@ -972,4 +1003,8 @@
             <point key="canvasLocation" x="87" y="1100"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="TriggerOFF" width="128" height="128"/>
+        <image name="TriggerON" width="128" height="128"/>
+    </resources>
 </document>
