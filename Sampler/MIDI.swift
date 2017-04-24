@@ -4,18 +4,26 @@
 //
 import CoreMIDI
 
-// TODO: Add MIDI outputs
 
 class MIDI
 {
+    var channel = 1
     var midiClient: MIDIClientRef = 0
     var inPort:MIDIPortRef = 0
+    var outPort:MIDIPortRef = 0
     var src:MIDIEndpointRef = MIDIGetSource(0)
+    var dst:MIDIEndpointRef = MIDIGetDestination(0)
+    var queue = DispatchQueue(label: "MIDIQueue", qos: .userInitiated)
+    
+    init()
+    {
+        MIDIClientCreate("MIDIClient" as CFString, nil, nil, &midiClient)
+    }
     
     /*
      * Connect to MIDI source port
      */
-    func connectSrc(_ n: Int) -> Void
+    func connectSrc(_ n: Int)
     {
         let endpoint:MIDIEndpointRef = MIDIGetSource(n);
         print("Setting source to: \(getDisplayName(endpoint))")
@@ -23,9 +31,22 @@ class MIDI
         inPort = UInt32(n)
         src = MIDIGetSource(n)
         
-        MIDIClientCreate("MIDIClient" as CFString, nil, nil, &midiClient)
-        MIDIInputPortCreate(midiClient, "MIDIInPort" as CFString, MIDIReadCallback as! MIDIReadProc, nil, &inPort)
+        MIDIInputPortCreate(midiClient, "MIDIInPort" as CFString, MIDIReadCallback, nil, &inPort)
         MIDIPortConnectSource(inPort, src, &src)
+    }
+    
+    /*
+     * Connect to MIDI destination port
+     */
+    func connectDest(_ n: Int)
+    {
+        let endpoint:MIDIEndpointRef = MIDIGetDestination(n)
+        print("Setting destination to: \(getDisplayName(endpoint))")
+        
+        outPort = UInt32(n)
+        dst = MIDIGetDestination(n)
+        
+        MIDIOutputPortCreate(midiClient, "MIDIOutPort" as CFString, &outPort)
     }
     
     /*
@@ -50,15 +71,15 @@ class MIDI
      */
     func getDestinationNames() -> [String]
     {
-        var names:[String] = [];
+        var names:[String] = []
         
-        let count: Int = MIDIGetNumberOfDestinations();
+        let count: Int = MIDIGetNumberOfDestinations()
         for i in 0..<count {
-            let endpoint:MIDIEndpointRef = MIDIGetDestination(i);
+            let endpoint:MIDIEndpointRef = MIDIGetDestination(i)
             
             if (endpoint != 0)
             {
-                names.append(getDisplayName(endpoint));
+                names.append(getDisplayName(endpoint))
             }
         }
         return names;
@@ -69,27 +90,45 @@ class MIDI
      */
     func getSourceNames() -> [String]
     {
-        var names:[String] = [];
+        var names:[String] = []
         
-        let count: Int = MIDIGetNumberOfSources();
+        let count: Int = MIDIGetNumberOfSources()
         for i in 0..<count {
-            let endpoint:MIDIEndpointRef = MIDIGetSource(i);
+            let endpoint:MIDIEndpointRef = MIDIGetSource(i)
             if (endpoint != 0)
             {
-                names.append(getDisplayName(endpoint));
+                names.append(getDisplayName(endpoint))
             }
         }
         return names;
     }
     
+    /*
+     * Send MIDI note to destination.
+     */
+    func playNote(note: UInt8, velocity: UInt8)
+    {
+        var packet:MIDIPacket = MIDIPacket()
+        packet.timeStamp = 0
+        packet.length = 1
+        
+        let cmd = velocity > 0 ? 0x90 : 0x80
+        packet.data.0 = UInt8(cmd + (channel - 1))
+        packet.data.1 = note
+        packet.data.2 = velocity
+        
+        var packetList:MIDIPacketList = MIDIPacketList(numPackets: 1, packet: packet)
+        MIDISend(outPort, dst, &packetList)
+    }
 }
 
+
 /*
- * C style callback to handle MIDI input packets.
+ * Callback to handle MIDI input packets.
  */
-func MIDIReadCallback(_ pktList: UnsafePointer<MIDIPacketList>,
-                      readProcRefCon: UnsafeMutableRawPointer,
-                      srcConnRefCon: UnsafeMutableRawPointer) -> Void
+func MIDIReadCallback(pktList: UnsafePointer<MIDIPacketList>,
+                      readProcRefCon: UnsafeMutableRawPointer?,
+                      srcConnRefCon: UnsafeMutableRawPointer?) -> Void
 {
     let packetList:MIDIPacketList = pktList.pointee
     
@@ -100,8 +139,12 @@ func MIDIReadCallback(_ pktList: UnsafePointer<MIDIPacketList>,
         let note = packet.data.1
         let velocity = packet.data.2
         
-        if ((cmd & 240) == 144)  {
-            print(note, velocity)
+        if (cmd & 0xF0) == 0x90 {
+            if velocity > 0 {
+                sampler.queue.async {
+                    sampler.playNote(note)
+                }
+            }
         }
         
         if (packet.length > 3) {

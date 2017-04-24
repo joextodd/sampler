@@ -5,6 +5,7 @@
 //
 import Cocoa
 
+
 /*
  * Delegate trigger actions to View Controller
  */
@@ -27,17 +28,36 @@ class Trigger: NSButton {
     }
     
     override func mouseDown(with event: NSEvent) {
-        sampler.playSound(self.tag)
+        let note = sampler.samples[self.tag].note
+        midi.queue.async {
+            midi.playNote(note: note, velocity: 100)
+        }
+        sampler.queue.async {
+            sampler.playSound(self.tag)
+        }
         self.image = NSImage(named: "TriggerON")
     }
     
     override func mouseUp(with event: NSEvent) {
+        let note = sampler.samples[self.tag].note
+        midi.queue.async {
+            midi.playNote(note: note, velocity: 0)
+        }
         self.image = NSImage(named: "TriggerOFF")
     }
     
     override func performKeyEquivalent(with key: NSEvent) -> Bool {
         if key.characters! == self.keyEquivalent {
-            sampler.playSound(self.tag)
+            let note = sampler.samples[self.tag].note
+            midi.queue.async {
+                midi.playNote(note: note, velocity: 100)
+            }
+            sampler.queue.async {
+                sampler.playSound(self.tag)
+            }
+            midi.queue.asyncAfter(deadline: .now() + 0.5) {
+                midi.playNote(note: note, velocity: 0)
+            }
         }
         return super.performKeyEquivalent(with: key)
     }

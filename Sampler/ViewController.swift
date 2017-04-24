@@ -44,6 +44,7 @@ class ViewController: NSViewController, TriggerDelegate {
     
     @IBAction func destSelected(_ sender: NSPopUpButton)
     {
+        midi.connectDest(midiDest.indexOfSelectedItem)
     }
     
     @IBAction func backPreset(_ sender: NSButton)

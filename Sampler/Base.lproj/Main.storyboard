@@ -676,7 +676,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="960" height="480"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button toolTip="Right Click to Edit" wantsLayer="YES" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="OjN-x8-bfP" userLabel="1" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
+                            <button toolTip="Right Click to Edit" wantsLayer="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OjN-x8-bfP" userLabel="1" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
                                 <rect key="frame" x="50" y="308" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="TriggerOFF" imagePosition="only" alignment="center" alternateImage="TriggerON" imageScaling="proportionallyUpOrDown" inset="2" id="VIH-gb-K6b">
@@ -685,7 +685,7 @@
                                     <string key="keyEquivalent">e</string>
                                 </buttonCell>
                             </button>
-                            <button identifier="1" fixedFrame="YES" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="rfI-IG-bWe" userLabel="2" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
+                            <button identifier="1" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="rfI-IG-bWe" userLabel="2" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
                                 <rect key="frame" x="175" y="308" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="TriggerOFF" imagePosition="only" alignment="center" alternateImage="TriggerON" imageScaling="proportionallyUpOrDown" inset="2" id="7aU-Q3-RaK">
@@ -694,7 +694,7 @@
                                     <string key="keyEquivalent">r</string>
                                 </buttonCell>
                             </button>
-                            <button fixedFrame="YES" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="zug-yu-36G" userLabel="3" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
+                            <button fixedFrame="YES" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="zug-yu-36G" userLabel="3" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
                                 <rect key="frame" x="300" y="308" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="TriggerOFF" imagePosition="only" alignment="center" alternateImage="TriggerON" imageScaling="proportionallyUpOrDown" inset="2" id="vUO-ay-yZO">
@@ -703,7 +703,7 @@
                                     <string key="keyEquivalent">t</string>
                                 </buttonCell>
                             </button>
-                            <button fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="bpG-rJ-8tN" userLabel="4" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
+                            <button fixedFrame="YES" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="bpG-rJ-8tN" userLabel="4" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
                                 <rect key="frame" x="425" y="308" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="TriggerOFF" imagePosition="only" alignment="center" alternateImage="TriggerON" imageScaling="proportionallyUpOrDown" inset="2" id="9VO-Ec-3Yc">
@@ -712,7 +712,7 @@
                                     <string key="keyEquivalent">y</string>
                                 </buttonCell>
                             </button>
-                            <button fixedFrame="YES" tag="5" translatesAutoresizingMaskIntoConstraints="NO" id="HYj-L8-XaY" userLabel="5" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
+                            <button fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="HYj-L8-XaY" userLabel="5" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
                                 <rect key="frame" x="550" y="308" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="TriggerOFF" imagePosition="only" alignment="center" alternateImage="TriggerON" imageScaling="proportionallyUpOrDown" inset="2" id="fC9-Tc-iiK">
@@ -721,7 +721,7 @@
                                     <string key="keyEquivalent">u</string>
                                 </buttonCell>
                             </button>
-                            <button toolTip="Right Click to Edit" wantsLayer="YES" fixedFrame="YES" tag="6" translatesAutoresizingMaskIntoConstraints="NO" id="mNP-Mi-aMx" userLabel="6" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
+                            <button toolTip="Right Click to Edit" wantsLayer="YES" fixedFrame="YES" tag="5" translatesAutoresizingMaskIntoConstraints="NO" id="mNP-Mi-aMx" userLabel="6" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
                                 <rect key="frame" x="50" y="183" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="TriggerOFF" imagePosition="only" alignment="center" alternateImage="TriggerON" imageScaling="proportionallyUpOrDown" inset="2" id="eXf-KA-zBO">
@@ -730,7 +730,7 @@
                                     <string key="keyEquivalent">d</string>
                                 </buttonCell>
                             </button>
-                            <button toolTip="Right Click to Edit" wantsLayer="YES" fixedFrame="YES" tag="8" translatesAutoresizingMaskIntoConstraints="NO" id="5dU-Rj-YdU" userLabel="8" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
+                            <button toolTip="Right Click to Edit" wantsLayer="YES" fixedFrame="YES" tag="7" translatesAutoresizingMaskIntoConstraints="NO" id="5dU-Rj-YdU" userLabel="8" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
                                 <rect key="frame" x="300" y="183" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="TriggerOFF" imagePosition="only" alignment="center" alternateImage="TriggerON" imageScaling="proportionallyUpOrDown" inset="2" id="6fr-id-ANG">
@@ -739,7 +739,7 @@
                                     <string key="keyEquivalent">g</string>
                                 </buttonCell>
                             </button>
-                            <button toolTip="Right Click to Edit" wantsLayer="YES" fixedFrame="YES" tag="9" translatesAutoresizingMaskIntoConstraints="NO" id="0Hq-ov-2hB" userLabel="9" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
+                            <button toolTip="Right Click to Edit" wantsLayer="YES" fixedFrame="YES" tag="8" translatesAutoresizingMaskIntoConstraints="NO" id="0Hq-ov-2hB" userLabel="9" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
                                 <rect key="frame" x="425" y="183" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="TriggerOFF" imagePosition="only" alignment="center" alternateImage="TriggerON" imageScaling="proportionallyUpOrDown" inset="2" id="qhf-SU-7D2">
@@ -748,7 +748,7 @@
                                     <string key="keyEquivalent">h</string>
                                 </buttonCell>
                             </button>
-                            <button toolTip="Right Click to Edit" wantsLayer="YES" fixedFrame="YES" tag="10" translatesAutoresizingMaskIntoConstraints="NO" id="noS-2Y-yty" userLabel="10" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
+                            <button toolTip="Right Click to Edit" wantsLayer="YES" fixedFrame="YES" tag="9" translatesAutoresizingMaskIntoConstraints="NO" id="noS-2Y-yty" userLabel="10" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
                                 <rect key="frame" x="550" y="183" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="TriggerOFF" imagePosition="only" alignment="center" alternateImage="TriggerON" imageScaling="proportionallyUpOrDown" inset="2" id="9O0-yC-b6n">
@@ -757,7 +757,7 @@
                                     <string key="keyEquivalent">j</string>
                                 </buttonCell>
                             </button>
-                            <button toolTip="Right Click to Edit" wantsLayer="YES" fixedFrame="YES" tag="11" translatesAutoresizingMaskIntoConstraints="NO" id="ua7-Lw-6aL" userLabel="11" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
+                            <button toolTip="Right Click to Edit" wantsLayer="YES" fixedFrame="YES" tag="10" translatesAutoresizingMaskIntoConstraints="NO" id="ua7-Lw-6aL" userLabel="11" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
                                 <rect key="frame" x="50" y="58" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="TriggerOFF" imagePosition="only" alignment="center" alternateImage="TriggerON" imageScaling="proportionallyUpOrDown" inset="2" id="PZe-n1-al4">
@@ -766,7 +766,7 @@
                                     <string key="keyEquivalent">x</string>
                                 </buttonCell>
                             </button>
-                            <button toolTip="Right Click to Edit" wantsLayer="YES" fixedFrame="YES" tag="12" translatesAutoresizingMaskIntoConstraints="NO" id="fEv-yr-tv4" userLabel="12" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
+                            <button toolTip="Right Click to Edit" wantsLayer="YES" fixedFrame="YES" tag="11" translatesAutoresizingMaskIntoConstraints="NO" id="fEv-yr-tv4" userLabel="12" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
                                 <rect key="frame" x="175" y="58" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="TriggerOFF" imagePosition="only" alignment="center" alternateImage="TriggerON" imageScaling="proportionallyUpOrDown" inset="2" id="SW3-9N-DfQ">
@@ -775,7 +775,7 @@
                                     <string key="keyEquivalent">c</string>
                                 </buttonCell>
                             </button>
-                            <button toolTip="Right Click to Edit" wantsLayer="YES" fixedFrame="YES" tag="13" translatesAutoresizingMaskIntoConstraints="NO" id="Zan-hP-kI2" userLabel="13" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
+                            <button toolTip="Right Click to Edit" wantsLayer="YES" fixedFrame="YES" tag="12" translatesAutoresizingMaskIntoConstraints="NO" id="Zan-hP-kI2" userLabel="13" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
                                 <rect key="frame" x="300" y="58" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="TriggerOFF" imagePosition="only" alignment="center" alternateImage="TriggerON" imageScaling="proportionallyUpOrDown" inset="2" id="m3b-1k-y9G">
@@ -784,7 +784,7 @@
                                     <string key="keyEquivalent">v</string>
                                 </buttonCell>
                             </button>
-                            <button toolTip="Right Click to Edit" wantsLayer="YES" fixedFrame="YES" tag="14" translatesAutoresizingMaskIntoConstraints="NO" id="A0y-Ad-HNN" userLabel="14" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
+                            <button toolTip="Right Click to Edit" wantsLayer="YES" fixedFrame="YES" tag="13" translatesAutoresizingMaskIntoConstraints="NO" id="A0y-Ad-HNN" userLabel="14" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
                                 <rect key="frame" x="425" y="58" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="TriggerOFF" imagePosition="only" alignment="center" alternateImage="TriggerON" imageScaling="proportionallyUpOrDown" inset="2" id="Uvh-dd-ptp">
@@ -793,7 +793,7 @@
                                     <string key="keyEquivalent">b</string>
                                 </buttonCell>
                             </button>
-                            <button toolTip="Right Click to Edit" wantsLayer="YES" fixedFrame="YES" tag="15" translatesAutoresizingMaskIntoConstraints="NO" id="1Tf-Hr-rtc" userLabel="15" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
+                            <button toolTip="Right Click to Edit" wantsLayer="YES" fixedFrame="YES" tag="14" translatesAutoresizingMaskIntoConstraints="NO" id="1Tf-Hr-rtc" userLabel="15" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
                                 <rect key="frame" x="550" y="58" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="TriggerOFF" imagePosition="only" alignment="center" alternateImage="TriggerON" imageScaling="proportionallyUpOrDown" inset="2" id="TmF-Yu-Ri3">
@@ -959,7 +959,7 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button toolTip="Right Click to Edit" wantsLayer="YES" fixedFrame="YES" tag="7" translatesAutoresizingMaskIntoConstraints="NO" id="KxK-KU-HnV" userLabel="7" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
+                            <button toolTip="Right Click to Edit" wantsLayer="YES" fixedFrame="YES" tag="6" translatesAutoresizingMaskIntoConstraints="NO" id="KxK-KU-HnV" userLabel="7" customClass="Trigger" customModule="Sampler" customModuleProvider="target">
                                 <rect key="frame" x="175" y="183" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="TriggerOFF" imagePosition="only" alignment="center" alternateImage="TriggerON" imageScaling="proportionallyUpOrDown" inset="2" id="rLV-TX-UZW">

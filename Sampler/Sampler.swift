@@ -17,13 +17,14 @@ class Sampler
 {
     var numSamples = 15
     var samples = [Sample]()
+    var queue = DispatchQueue(label: "SamplerQueue", qos: .userInteractive)
     
     init() {
-        for _ in 0..<numSamples {
+        for s in 0..<numSamples {
             samples.append(Sample(
-                note: 0,
+                note: UInt8(60 + s),
                 path: "",
-                velocity: 1,
+                velocity: 100,
                 sound: AVAudioPlayer()
             ));
         }
@@ -59,6 +60,15 @@ class Sampler
     func setSound(_ s: Int, path: String)
     {
         loadSound(s, path: path)
+    }
+    
+    func playNote(_ n: UInt8)
+    {
+        for s in 0..<numSamples {
+            if samples[s].note == n {
+                playSound(s)
+            }
+        }
     }
     
     func savePreset(_ p: Int)
@@ -103,11 +113,17 @@ class Sampler
         var data: [[String: AnyObject]] = []
         let presets = UserDefaults()
         
-        for _ in 0..<numSamples {
+        for s in 0..<numSamples {
+            samples[s] = Sample(
+                note: UInt8(60 + s),
+                path: "",
+                velocity: 100,
+                sound: AVAudioPlayer()
+            )
             data.append([
-                "note": String(0) as AnyObject,
+                "note": String(60 + s) as AnyObject,
                 "path": "" as AnyObject,
-                "velocity": String(1) as AnyObject
+                "velocity": String(100) as AnyObject
             ])
         }
         presets.set(data, forKey: String(p))
