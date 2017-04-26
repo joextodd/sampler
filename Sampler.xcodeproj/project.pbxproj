@@ -11,13 +11,14 @@
 		771CA2461EA4E29B00BB7EAA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771CA2451EA4E29B00BB7EAA /* ViewController.swift */; };
 		771CA2481EA4E29B00BB7EAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 771CA2471EA4E29B00BB7EAA /* Assets.xcassets */; };
 		771CA24B1EA4E29B00BB7EAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 771CA2491EA4E29B00BB7EAA /* Main.storyboard */; };
-		771CA2561EA4E29C00BB7EAA /* SamplerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771CA2551EA4E29C00BB7EAA /* SamplerTests.swift */; };
 		771CA2611EA4E29C00BB7EAA /* SamplerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771CA2601EA4E29C00BB7EAA /* SamplerUITests.swift */; };
 		771CA26F1EA4E95300BB7EAA /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 771CA26E1EA4E95300BB7EAA /* CoreMIDI.framework */; };
 		771CA2711EA4E99E00BB7EAA /* MIDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771CA2701EA4E99E00BB7EAA /* MIDI.swift */; };
 		776FDCC21EA50E1D0054E57F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 776FDCC11EA50E1D0054E57F /* AVFoundation.framework */; };
 		776FDCC41EA526260054E57F /* Sampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FDCC31EA526260054E57F /* Sampler.swift */; };
+		7780F1401EAFD60F00D56D93 /* Looper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7780F13F1EAFD60F00D56D93 /* Looper.swift */; };
 		77D1053F1EA80A3F0034C521 /* Trigger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D1053E1EA80A3F0034C521 /* Trigger.swift */; };
+		77DFFF991EB11AC200C33149 /* LooperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DFFF981EB11AC200C33149 /* LooperTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +46,6 @@
 		771CA24A1EA4E29B00BB7EAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		771CA24C1EA4E29B00BB7EAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		771CA2511EA4E29C00BB7EAA /* SamplerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SamplerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		771CA2551EA4E29C00BB7EAA /* SamplerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplerTests.swift; sourceTree = "<group>"; };
 		771CA2571EA4E29C00BB7EAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		771CA25C1EA4E29C00BB7EAA /* SamplerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SamplerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		771CA2601EA4E29C00BB7EAA /* SamplerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplerUITests.swift; sourceTree = "<group>"; };
@@ -54,7 +54,9 @@
 		771CA2701EA4E99E00BB7EAA /* MIDI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MIDI.swift; sourceTree = "<group>"; };
 		776FDCC11EA50E1D0054E57F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		776FDCC31EA526260054E57F /* Sampler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sampler.swift; sourceTree = "<group>"; };
+		7780F13F1EAFD60F00D56D93 /* Looper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Looper.swift; sourceTree = "<group>"; };
 		77D1053E1EA80A3F0034C521 /* Trigger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trigger.swift; sourceTree = "<group>"; };
+		77DFFF981EB11AC200C33149 /* LooperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LooperTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				771CA2701EA4E99E00BB7EAA /* MIDI.swift */,
 				776FDCC31EA526260054E57F /* Sampler.swift */,
 				77D1053E1EA80A3F0034C521 /* Trigger.swift */,
+				7780F13F1EAFD60F00D56D93 /* Looper.swift */,
 			);
 			path = Sampler;
 			sourceTree = "<group>";
@@ -123,8 +126,8 @@
 		771CA2541EA4E29C00BB7EAA /* SamplerTests */ = {
 			isa = PBXGroup;
 			children = (
-				771CA2551EA4E29C00BB7EAA /* SamplerTests.swift */,
 				771CA2571EA4E29C00BB7EAA /* Info.plist */,
+				77DFFF981EB11AC200C33149 /* LooperTests.swift */,
 			);
 			path = SamplerTests;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 			files = (
 				771CA2461EA4E29B00BB7EAA /* ViewController.swift in Sources */,
 				771CA2441EA4E29B00BB7EAA /* AppDelegate.swift in Sources */,
+				7780F1401EAFD60F00D56D93 /* Looper.swift in Sources */,
 				776FDCC41EA526260054E57F /* Sampler.swift in Sources */,
 				77D1053F1EA80A3F0034C521 /* Trigger.swift in Sources */,
 				771CA2711EA4E99E00BB7EAA /* MIDI.swift in Sources */,
@@ -292,7 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				771CA2561EA4E29C00BB7EAA /* SamplerTests.swift in Sources */,
+				77DFFF991EB11AC200C33149 /* LooperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

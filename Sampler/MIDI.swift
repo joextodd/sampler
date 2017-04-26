@@ -7,6 +7,8 @@ import CoreMIDI
 
 class MIDI
 {
+    // TODO: Dispatch event to light trigger on MIDI IN
+    
     var channel = 1
     var midiClient: MIDIClientRef = 0
     var inPort:MIDIPortRef = 0

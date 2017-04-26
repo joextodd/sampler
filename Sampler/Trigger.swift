@@ -29,6 +29,7 @@ class Trigger: NSButton {
     
     override func mouseDown(with event: NSEvent) {
         let note = sampler.samples[self.tag].note
+        looper.addEvent(UInt8(self.tag))
         midi.queue.async {
             midi.playNote(note: note, velocity: 100)
         }
@@ -49,6 +50,7 @@ class Trigger: NSButton {
     override func performKeyEquivalent(with key: NSEvent) -> Bool {
         if key.characters! == self.keyEquivalent {
             let note = sampler.samples[self.tag].note
+            looper.addEvent(UInt8(self.tag))
             midi.queue.async {
                 midi.playNote(note: note, velocity: 100)
             }

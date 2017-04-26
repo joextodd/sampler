@@ -28,6 +28,9 @@ class ViewController: NSViewController, TriggerDelegate {
             midiDest.addItem(withTitle: "No MIDI outputs available")
         }
         
+        triggerVelocity.minValue = 0
+        triggerVelocity.maxValue = 128
+        
         setTriggerDelegates()
     }
     
@@ -83,12 +86,19 @@ class ViewController: NSViewController, TriggerDelegate {
     
     @IBAction func changeVelocity(_ sender: NSSlider)
     {
+        sampler.setVelocity(selectedTrigger, velocity: UInt8(sender.floatValue))
+        sampler.savePreset(Int(preset.title)!)
     }
     
     func triggerSelected(_ t: Int) {
         selectedTrigger = t
         triggerNo.title = String(t)
+        triggerVelocity.floatValue = Float(sampler.getVelocity(selectedTrigger))
     }
+    
+    @IBAction func startZeroLoop(_ sender: NSButton) { looper.startLoop(0) }
+    @IBAction func loopZeroLoop(_ sender: NSButton) { looper.endLoop(0) }
+    @IBAction func stopZeroLoop(_ sender: NSButton) { looper.stopLoop(0) }
 
     @IBOutlet var t1: Trigger!
     @IBOutlet var t2: Trigger!
@@ -119,23 +129,16 @@ class ViewController: NSViewController, TriggerDelegate {
     @IBOutlet var triggerFile: NSButton!
     @IBOutlet var triggerVelocity: NSSlider!
     
+    @IBOutlet var startZero: NSButton!
+    @IBOutlet var loopZero: NSButton!
+    @IBOutlet var endZero: NSButton!
+    
     func setTriggerDelegates()
     {
-        t1.delegate = self
-        t2.delegate = self
-        t3.delegate = self
-        t4.delegate = self
-        t5.delegate = self
-        t6.delegate = self
-        t7.delegate = self
-        t8.delegate = self
-        t9.delegate = self
-        t10.delegate = self
-        t11.delegate = self
-        t12.delegate = self
-        t13.delegate = self
-        t14.delegate = self
-        t15.delegate = self
+        t1.delegate = self; t2.delegate = self; t3.delegate = self; t4.delegate = self
+        t5.delegate = self; t6.delegate = self; t7.delegate = self; t8.delegate = self
+        t9.delegate = self; t10.delegate = self; t11.delegate = self; t12.delegate = self
+        t13.delegate = self; t14.delegate = self; t15.delegate = self
     }
     
 }

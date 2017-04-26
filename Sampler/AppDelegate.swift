@@ -11,6 +11,7 @@ import CoreMIDI
 
 var midi = MIDI()
 var sampler = Sampler()
+var looper = Looper()
 
 
 @NSApplicationMain

@@ -9,7 +9,7 @@ import AVFoundation
 struct Sample {
     var note: UInt8
     var path: String
-    var velocity: Int
+    var velocity: UInt8
     var sound: AVAudioPlayer
 }
 
@@ -52,6 +52,7 @@ class Sampler
                 samples[s].sound.stop();
             }
             samples[s].sound.currentTime = 0;
+            samples[s].sound.volume = Float(samples[s].velocity) / 128.0
             samples[s].sound.prepareToPlay()
             samples[s].sound.play()
         }
@@ -60,6 +61,16 @@ class Sampler
     func setSound(_ s: Int, path: String)
     {
         loadSound(s, path: path)
+    }
+    
+    func setVelocity(_ s: Int, velocity: UInt8)
+    {
+        samples[s].velocity = velocity
+    }
+    
+    func getVelocity(_ s: Int) -> UInt8
+    {
+        return samples[s].velocity
     }
     
     func playNote(_ n: UInt8)
@@ -98,7 +109,7 @@ class Sampler
                 let sample = Sample(
                     note: UInt8(smpl["note"] as! String)!,
                     path: smpl["path"] as! String,
-                    velocity: Int(smpl["velocity"] as! String)!,
+                    velocity: UInt8(smpl["velocity"] as! String)!,
                     sound: AVAudioPlayer()
                 )
                 samples[s] = sample
