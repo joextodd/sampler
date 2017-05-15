@@ -3,6 +3,7 @@
 //  Sampler
 //
 //
+import Cocoa
 import AVFoundation
 
 
@@ -18,6 +19,7 @@ class Sampler
     var numSamples = 15
     var samples = [Sample]()
     var queue = DispatchQueue(label: "SamplerQueue", qos: .userInteractive)
+    var view = ViewController()
     
     init() {
         for s in 0..<numSamples {
@@ -78,6 +80,14 @@ class Sampler
         for s in 0..<numSamples {
             if samples[s].note == n {
                 playSound(s)
+            }
+        }
+    }
+    
+    func midiTriggerOn(_ n: UInt8) {
+        for s in 0..<numSamples {
+            if samples[s].note == n {
+                view.triggerOn(s)
             }
         }
     }

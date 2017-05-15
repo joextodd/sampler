@@ -145,6 +145,7 @@ func MIDIReadCallback(pktList: UnsafePointer<MIDIPacketList>,
             if velocity > 0 {
                 sampler.queue.async {
                     sampler.playNote(note)
+                    sampler.midiTriggerOn(note)
                 }
             }
         }
